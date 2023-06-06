@@ -1,9 +1,12 @@
-
 .items {
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px groove;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px groove;
+}
+
+.btn-div button {
+  margin: 5px;
 }
