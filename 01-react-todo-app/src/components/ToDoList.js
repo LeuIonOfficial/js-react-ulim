@@ -28,8 +28,7 @@ const ToDoList = () => {
   const handleKeyDown = (event) => {
     if (event.keyCode === 13 && inputValue.trim() !== '') {
       event.preventDefault();
-      setTodos([...todos, inputValue]);
-      setInputValue('');
+      handleAddTodo()
     }
   };
 
@@ -103,7 +102,7 @@ const ToDoList = () => {
                         <div className="btn-div">
                           <button
                             className="btn btn-outline-danger"
-                            onClick={() => handleEditTodo(index)}
+                            onClick={() => handleDeleteTodo(index)}
                           >
                             Edit
                           </button>
