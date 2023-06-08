@@ -27,7 +27,7 @@ function ListGroup() {
             content: inputValue.content
         }
             setTodoList((prevList) => [...prevList, newTodo])
-            setInputValue(() => ({content: '', title: ''}))
+            setInputValue({content: '', title: ''})
         }
     }
 
@@ -40,6 +40,11 @@ function ListGroup() {
 
     const handleFilterInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
         setFilterValue({title: event.target.value, content: event.target.value})
+    }
+
+    const handleDeleteItem = (index: number) => {
+        const filteredList = todoList.filter((_, i) => i !== index)
+        setTodoList(filteredList)
     }
 
 
@@ -83,14 +88,14 @@ function ListGroup() {
                             </div>
                             <div>
                                 <button className='btn btn-primary m-2'>Edit</button>
-                                <button className='btn btn-danger'>Delete</button>
+                                <button className='btn btn-danger' onClick={() => handleDeleteItem(index)}>Delete</button>
                             </div>
                         </li>
                     </>
                   )
                 })}
                 <div>
-                    <button className='btn btn-danger mt-3'>Delete all</button>
+                    <button className='btn btn-danger mt-3' onClick={() => {setTodoList([])}}>Delete all</button>
                 </div>
             </ul>
         </div>
