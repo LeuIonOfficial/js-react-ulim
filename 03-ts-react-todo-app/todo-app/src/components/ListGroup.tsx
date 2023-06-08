@@ -45,13 +45,15 @@ function ListGroup() {
             <br/>
             {todoList.length === 0 && <p>no item found</p>}
             <ul className="list-group">
-                {todoList.map(obj => {
-                    return (
-                        <>
-                            <li key={obj.title} className="list-group-item">{obj.title}</li>
-                            <li key={obj.title} className="list-group-item">{obj.content}</li>
-                        </>
-                    )
+                {todoList.map((obj, index: number) => {
+                  return (
+                    <>
+                        <li key={index} className="list-group-item">
+                            <strong>{obj.title}</strong> <br/>
+                            {obj.content}
+                        </li>
+                    </>
+                  )
                 })}
             </ul>
         </div>
